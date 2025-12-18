@@ -14,13 +14,8 @@ def generate_qrcode():
     # 获取当前文件所在目录
     current_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # HTML文件的URL（需要部署到服务器后替换为实际URL）
-    # 这里先使用本地文件路径作为示例
-    html_file = os.path.join(current_dir, 'wifi-info.html')
-    
-    # 如果您有服务器，请替换为实际的URL
-    # url = "https://your-domain.com/wifi-info.html"
-    url = f"file://{html_file}"
+    # Netlify URL
+    url = "https://superb-beignet-71d65e.netlify.app/wifi-info.html"
     
     print(f"生成二维码，链接到: {url}")
     
