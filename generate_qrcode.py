@@ -14,8 +14,8 @@ def generate_qrcode():
     # 获取当前文件所在目录
     current_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # GitHub Pages URL
-    url = "https://siven97.github.io/-/wifi-info.html"
+    # GitHub Pages URL (index.html可以省略)
+    url = "https://siven97.github.io/-/"
     
     print(f"生成二维码，链接到: {url}")
     
