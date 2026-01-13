@@ -12,111 +12,31 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            background: #f5f5f5;
         }
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+        .image-container {
+            position: relative;
             width: 100%;
-            padding: 40px 30px;
-        }
-
-        .title {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        .info-item {
+            max-width: 100%;
+            height: auto;
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            padding: 15px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .info-item:hover {
-            background: #f8f9fa;
-        }
-
-        .icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 18px;
-            color: white;
-            flex-shrink: 0;
-            margin-right: 15px;
-        }
-
-        .icon-a { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); }
-        .icon-b { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        .icon-c { background: linear-gradient(135deg, #ffd93d 0%, #ffb800 100%); }
-        .icon-d { background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%); }
-        .icon-e { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #666; }
-
-        .content {
-            flex: 1;
-        }
-
-        .content-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-
-        .content-text {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .wifi-password {
-            display: inline-flex;
             align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 5px;
-            user-select: none;
         }
 
-        .wifi-password:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .wifi-password:active {
-            transform: translateY(0);
-        }
-
-        .copy-icon {
-            margin-left: 8px;
-            font-size: 14px;
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 100%;
+            object-fit: contain;
         }
 
         .toast {
@@ -131,166 +51,99 @@
             font-size: 16px;
             z-index: 1000;
             transition: all 0.3s ease;
+            pointer-events: none;
         }
 
         .toast.show {
             transform: translate(-50%, -50%) scale(1);
         }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #f0f0f0;
-            color: #95a5a6;
-            font-size: 14px;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .wifi-password.copied {
-            animation: pulse 0.3s ease;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">高端旅客尊享服务指南</h1>
-
-        <div class="info-item">
-            <div class="icon icon-a">A</div>
-            <div class="content">
-                <div class="content-title">优先安检</div>
-                <div class="content-text">使用标识为"Ab"的专属安检通道</div>
-            </div>
-        </div>
-
-        <div class="info-item">
-            <div class="icon icon-b">B</div>
-            <div class="content">
-                <div class="content-title">贵宾休息室</div>
-                <div class="content-text">位置：S安检通道对面</div>
-            </div>
-        </div>
-
-        <div class="info-item">
-            <div class="icon icon-c">C</div>
-            <div class="content">
-                <div class="content-title">服务时间</div>
-                <div class="content-text">
-                    午餐：12:00 - 13:30<br>
-                    晚餐：17:30 - 19:00
-                </div>
-            </div>
-        </div>
-
-        <div class="info-item">
-            <div class="icon icon-d">D</div>
-            <div class="content">
-                <div class="content-title">准入规则</div>
-                <div class="content-text">
-                    会员：¥100 / 2小时<br>
-                    非会员：¥150 / 2小时
-                </div>
-            </div>
-        </div>
-
-        <div class="info-item">
-            <div class="icon icon-e">E</div>
-            <div class="content">
-                <div class="content-title">便利设施</div>
-                <div class="content-text">
-                    洗手间：休息室出门左手边<br>
-                    吸烟区：21号登机口对面通道<br>
-                    Wi-Fi：<span class="wifi-password" onclick="copyPassword()">
-                        031196699
-                        <span class="copy-icon">📋</span>
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            河北航空 © 2025 版权所有
-        </div>
+    <div class="image-container">
+        <img src="Xnip2026-01-14_00-49-09.jpg" alt="高端旅客尊享服务指南" id="serviceImage">
     </div>
 
     <div class="toast" id="toast">密码已复制！</div>
 
     <script>
-        function copyPassword() {
-            const password = '031196699';
-            const passwordElement = document.querySelector('.wifi-password');
-            
-            // 创建临时输入框
-            const tempInput = document.createElement('input');
-            tempInput.value = password;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // 移动端兼容
-            
+        const password = '031196699';
+        const image = document.getElementById('serviceImage');
+        const toast = document.getElementById('toast');
+
+        // 复制密码函数
+        async function copyPassword() {
             try {
-                // 执行复制
-                document.execCommand('copy');
-                
-                // 显示提示
-                showToast();
-                
-                // 添加动画效果
-                passwordElement.classList.add('copied');
-                setTimeout(() => {
-                    passwordElement.classList.remove('copied');
-                }, 300);
+                // 优先使用现代 Clipboard API
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(password);
+                    showToast();
+                } else {
+                    // 降级方案：使用传统方法
+                    const tempInput = document.createElement('input');
+                    tempInput.value = password;
+                    tempInput.style.position = 'fixed';
+                    tempInput.style.opacity = '0';
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    tempInput.setSelectionRange(0, 99999);
+                    
+                    try {
+                        document.execCommand('copy');
+                        showToast();
+                    } catch (err) {
+                        console.error('复制失败:', err);
+                        alert('复制失败，请手动复制：' + password);
+                    }
+                    
+                    document.body.removeChild(tempInput);
+                }
             } catch (err) {
                 console.error('复制失败:', err);
-                alert('复制失败，请手动复制：' + password);
+                // 最终降级方案
+                const tempInput = document.createElement('input');
+                tempInput.value = password;
+                tempInput.style.position = 'fixed';
+                tempInput.style.opacity = '0';
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999);
+                try {
+                    document.execCommand('copy');
+                    showToast();
+                } catch (e) {
+                    alert('复制失败，请手动复制：' + password);
+                }
+                document.body.removeChild(tempInput);
             }
-            
-            // 移除临时输入框
-            document.body.removeChild(tempInput);
         }
 
+        // 显示提示
         function showToast() {
-            const toast = document.getElementById('toast');
             toast.classList.add('show');
-            
             setTimeout(() => {
                 toast.classList.remove('show');
             }, 2000);
         }
 
-        // 支持现代浏览器的 Clipboard API
-        if (navigator.clipboard) {
-            window.copyPassword = async function() {
-                const password = '031196699';
-                const passwordElement = document.querySelector('.wifi-password');
+        // 图片加载完成后添加点击事件
+        image.addEventListener('load', function() {
+            // 点击事件处理
+            image.addEventListener('click', function(e) {
+                const rect = image.getBoundingClientRect();
+                const clickY = e.clientY - rect.top;
+                const imageHeight = rect.height;
                 
-                try {
-                    await navigator.clipboard.writeText(password);
-                    showToast();
-                    passwordElement.classList.add('copied');
-                    setTimeout(() => {
-                        passwordElement.classList.remove('copied');
-                    }, 300);
-                } catch (err) {
-                    console.error('复制失败:', err);
-                    // 降级到旧方法
-                    const tempInput = document.createElement('input');
-                    tempInput.value = password;
-                    document.body.appendChild(tempInput);
-                    tempInput.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(tempInput);
-                    showToast();
+                // 判断是否点击在下半部分（下半部分50%）
+                if (clickY > imageHeight / 2) {
+                    copyPassword();
                 }
-            }
+            });
+        });
+
+        // 如果图片已经加载完成
+        if (image.complete) {
+            image.dispatchEvent(new Event('load'));
         }
     </script>
 </body>
